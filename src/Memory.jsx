@@ -41,8 +41,8 @@ const rightData = shuffle([
 ]);
 
 export default function Memory() {
-  const [leftCards, setLeftCards] = useState(leftData);
-  const [rightCards, setRigtCards] = useState(rightData);
+  const [leftCards] = useState(leftData);
+  const [rightCards] = useState(rightData);
   const [selectedCards, setSelectedCards] = useState({
     firstCard: null,
     secondCard: null,
