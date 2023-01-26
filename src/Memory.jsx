@@ -1,44 +1,21 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-const TILE_COLORS = ["red", "green", "blue", "yellow"];
+const TILE_COLORS = ["aquamarine", "tomato", "black", "yellow", "red", "gold"];
 
-const leftData = shuffle([
-  {
-    color: TILE_COLORS[0],
-    id: 1,
-  },
-  {
-    color: TILE_COLORS[1],
-    id: 2,
-  },
-  {
-    color: TILE_COLORS[2],
-    id: 3,
-  },
-  {
-    color: TILE_COLORS[3],
-    id: 4,
-  },
-]);
+const leftData = shuffle(
+  TILE_COLORS.map((color) => ({
+    id: uuidv4(),
+    color: color,
+  }))
+);
 
-const rightData = shuffle([
-  {
-    color: TILE_COLORS[0],
-    id: 5,
-  },
-  {
-    color: TILE_COLORS[1],
-    id: 6,
-  },
-  {
-    color: TILE_COLORS[2],
-    id: 7,
-  },
-  {
-    color: TILE_COLORS[3],
-    id: 8,
-  },
-]);
+const rightData = shuffle(
+  TILE_COLORS.map((color) => ({
+    id: uuidv4(),
+    color: color,
+  }))
+);
 
 export default function Memory() {
   const [leftCards] = useState(leftData);
